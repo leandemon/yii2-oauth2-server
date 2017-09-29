@@ -135,9 +135,7 @@ class Module extends \yii\base\Module
     
     public function getRequest()
     {
-        if(!$this->has('request')) {
-            $this->set('request', Request::createFromGlobals());
-        }
+        $this->set('request', \OAuth2\Request::createFromGlobals());
         return $this->get('request');
     }
     
